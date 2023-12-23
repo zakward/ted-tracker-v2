@@ -50,6 +50,7 @@ function Form() {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(inputs)
+        alert("This would be a lot cooler if it worked... alright, alright, alright")
     }
 
     return (
