@@ -53,7 +53,7 @@ const navigate = useNavigate()
         e.preventDefault()
         console.log(inputs)
         addTed(inputs)
-        alert("At this time you will only see the TED Name!")
+        alert("Every little thing.... its gonna be alright!")
         navigate("/tedList")
     }
 

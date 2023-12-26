@@ -1,25 +1,27 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 
 function TedList() {
-    const {allTeds, addTed} = useContext(UserContext)
+    const { allTeds, addTed } = useContext(UserContext)
     console.log(allTeds)
     const tedElements = allTeds.map(ted => {
         return (
             <>
-                <h1>{ted.name}</h1>
-                <h1>{ted.category}</h1>
-                <h1>{ted.type}</h1>
+                <li>{ted.name}</li>
+                <li>{ted.category}</li>
+                <li>{ted.type}</li>
 
             </>
         )
     })
-    return ( 
+    return (
         <>
-            <h1>Future Ted List</h1>
-            {tedElements}
+            <h1>TedList</h1>
+            <ul>
+                {tedElements}
+            </ul>
         </>
-     );
+    );
 }
 
 export default TedList;
