@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import moment from "moment"
+import { UserContext } from '../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 function Form() {
-
-
+const {addTed} = useContext(UserContext)
+const navigate = useNavigate()
     const [inputs, setInputs] = useState({
         name: "",
         dispensaryPurchased: "",
@@ -50,7 +52,9 @@ function Form() {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(inputs)
-        alert("This would be a lot cooler if it worked... alright, alright, alright")
+        addTed(inputs)
+        alert("At this time you will only see the TED Name!")
+        navigate("/tedList")
     }
 
     return (
@@ -61,10 +65,48 @@ function Form() {
             <label>THC %</label><input className="form-input" name="thc" value={inputs.thc} onChange={handleChange} type="number" />
             <label>CBD %</label><input className="form-input" name="cbd" value={inputs.cbd} onChange={handleChange} type="number" />
             <label>Harvest Date</label><input className="form-input" name="harvestDate" onChange={handleDateChange} type="date" />
-            <label>Category</label><input className="form-input" name="category" value={inputs.category} onChange={handleChange} />
-            <label>Type</label><input className="form-input" name="type" value={inputs.type} onChange={handleChange} />
-            <label>Stars</label><input className="form-input" name="stars" value={inputs.stars} onChange={handleChange} type="number" />
-            <button>Add Ted</button>
+            <label>Category</label>
+            <select className="form-input" name="category" value={inputs.category} onChange={handleChange}>
+                <option value="flower">Flower</option>
+                <option value="gummy">Gummy</option>
+                <option value="edible">Edible</option>
+            </select>
+            <label>Type</label>
+            <select className="form-input" name="type" value={inputs.type} onChange={handleChange}>
+                <option value="Sativa">Sativa</option>
+                <option value="Indica">Indica</option>
+                <option value="Hybrid">Hybrid</option>
+                </select>
+                <label>Stars</label>
+                <select className="form-input" name="stars" value={inputs.stars} onChange={handleChange}>
+
+
+                    <option
+
+                        value="1">⭐</option>
+
+
+                    <option
+
+                        value="2">⭐⭐</option>
+
+
+                    <option
+
+                        value="3">⭐⭐⭐</option>
+
+
+                    <option
+
+                        value="4">⭐⭐⭐⭐</option>
+
+
+                    <option
+
+                        value="5">⭐⭐⭐⭐⭐</option>
+
+
+                </select>                <button>Add Ted</button>
 
         </form>
     );
