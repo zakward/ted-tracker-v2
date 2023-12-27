@@ -19,6 +19,7 @@ function Ted({name, _id, grower, category,dispensaryPurchased, thc, cbd, type, h
             </>
         )
     })
+
     return ( 
         <div id = "ted-wrapper">
             <h2>{name}</h2>
