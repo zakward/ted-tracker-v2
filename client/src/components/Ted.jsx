@@ -1,15 +1,24 @@
 import React, {useContext} from 'react';
 import moment from "moment"
 import { UserContext } from '../context/UserContext';
+import Review from "./Review"
 
 
 function Ted({name, _id, grower, category,dispensaryPurchased, thc, cbd, type, harvestDate, stars}) {
     const date = moment(harvestDate).format("MM-DD-YYYY")
-    const {deleteTed} = useContext(UserContext)
+    const {deleteTed, allReviews} = useContext(UserContext)
     const deleteTedItem = () => {
         console.log("Test")
         deleteTed(_id)
     }
+    const filteredReviews = allReviews.filter(review => review.tedId === _id)
+    const filteredElements = filteredReviews.map(review => {
+        return (
+            <>
+                <Review {...review}/>
+            </>
+        )
+    })
     return ( 
         <div id = "ted-wrapper">
             <h2>{name}</h2>
@@ -21,8 +30,9 @@ function Ted({name, _id, grower, category,dispensaryPurchased, thc, cbd, type, h
             <p>Category: {category}</p>
             <p>Type: {type}</p>
             <p>Stars: {stars} </p>
+            <button onClick = {deleteTedItem}>Delete TED</button>
             <h3>REVIEWS</h3>
-            <button onClick = {deleteTedItem}>X</button>
+           <ul>{filteredElements}</ul>
         </div>
      );
 }

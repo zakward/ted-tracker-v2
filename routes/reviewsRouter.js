@@ -1,9 +1,19 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const Review = require("../models/Review");
+const User = require("../models/User");
 
 const reviewRouter = express.Router()
 
+
+reviewRouter.get("/", async (req, res, next) => {
+    try {
+        const reviews = await Review.find().populate("author")
+        return res.status(200).send(reviews)
+    } catch (error) {
+        res.status(500)
+    }
+})
 
 reviewRouter.post("/:tedId", async (req, res, next) => {
     try {

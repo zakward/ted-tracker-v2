@@ -50,7 +50,7 @@ form {
 #ted-wrapper{
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 100%;
   width: 350px;
   border: 3px solid black;
   align-items: center;

@@ -27,6 +27,8 @@ export default function UserProvider(props) {
 
     const [allTeds, setAllTeds] = useState([])
 
+    const [allReviews, setAllReviews] = useState([])
+
    async function signup(creds){
     try {
         const res = await axios.post("/api/auth/signup", (creds))
@@ -111,10 +113,18 @@ export default function UserProvider(props) {
         .catch(err => console.err)
     }
 
+    useEffect(()=> {
+        userAxios.get("/api/main/reviews")
+        .then(res => setAllReviews(res.data))
+        .catch(err => console.log(err))
+    }, [])
+
+    console.log(allReviews)
+
 
 
     return (
-        <UserContext.Provider value = {{deleteTed, userAxios, addTed,signup, login, ...userState, resetAuthErr, logout, allTeds, setAllTeds}}>
+        <UserContext.Provider value = {{allReviews, deleteTed, userAxios, addTed,signup, login, ...userState, resetAuthErr, logout, allTeds, setAllTeds}}>
             {props.children}
         </UserContext.Provider>
     )
