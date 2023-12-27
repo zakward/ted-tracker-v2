@@ -5,7 +5,10 @@ const morgan = require('morgan');
 require("dotenv").config()
 const {expressjwt} = require("express-jwt")
 
+const path = require("path"); //required for deployment
+mongoose.set("strictQuery", false);
 
+app.use(express.static(path.join(__dirname, "client", "dist"))); // middleware for deployment
 const connectToDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_DB)
@@ -32,3 +35,7 @@ app.use((err, req, res, next) => {
     }
     return res.send({errMsg: err.message})
 })
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "dist", "index.html")); // middleware for deployment // dist for vite
+  });
