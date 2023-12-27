@@ -30,9 +30,9 @@ function Ted({name, _id, grower, category,dispensaryPurchased, thc, cbd, type, h
             <p>Category: {category}</p>
             <p>Type: {type}</p>
             <p>Stars: {stars} </p>
-            <button onClick = {deleteTedItem}>Delete TED</button>
             <h3>REVIEWS</h3>
-           <ul>{filteredElements}</ul>
+           <div>{filteredElements}</div>
+           <button onClick = {deleteTedItem}>Delete TED</button>
         </div>
      );
 }
