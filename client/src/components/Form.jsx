@@ -4,8 +4,8 @@ import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 function Form() {
-const {addTed} = useContext(UserContext)
-const navigate = useNavigate()
+    const { addTed } = useContext(UserContext)
+    const navigate = useNavigate()
     const [inputs, setInputs] = useState({
         name: "",
         dispensaryPurchased: "",
@@ -67,46 +67,48 @@ const navigate = useNavigate()
             <label>Harvest Date</label><input className="form-input" name="harvestDate" onChange={handleDateChange} type="date" />
             <label>Category</label>
             <select className="form-input" name="category" value={inputs.category} onChange={handleChange}>
+                <option value="">---</option>
                 <option value="flower">Flower</option>
                 <option value="gummy">Gummy</option>
                 <option value="edible">Edible</option>
             </select>
             <label>Type</label>
             <select className="form-input" name="type" value={inputs.type} onChange={handleChange}>
+                <option value="">---</option>
                 <option value="sativa">Sativa</option>
                 <option value="indica">Indica</option>
                 <option value="hybrid">Hybrid</option>
-                </select>
-                <label>Stars</label>
-                <select className="form-input" name="stars" value={inputs.stars} onChange={handleChange}>
+            </select>
+            <label>Stars</label>
+            <select className="form-input" name="stars" value={inputs.stars} onChange={handleChange}>
 
 
-                    <option
+                <option
 
-                        value="1">⭐</option>
-
-
-                    <option
-
-                        value="2">⭐⭐</option>
+                    value="1">⭐</option>
 
 
-                    <option
+                <option
 
-                        value="3">⭐⭐⭐</option>
-
-
-                    <option
-
-                        value="4">⭐⭐⭐⭐</option>
+                    value="2">⭐⭐</option>
 
 
-                    <option
+                <option
 
-                        value="5">⭐⭐⭐⭐⭐</option>
+                    value="3">⭐⭐⭐</option>
 
 
-                </select>                <button>Add Ted</button>
+                <option
+
+                    value="4">⭐⭐⭐⭐</option>
+
+
+                <option
+
+                    value="5">⭐⭐⭐⭐⭐</option>
+
+
+            </select>                <button>Add Ted</button>
 
         </form>
     );
