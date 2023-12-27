@@ -91,17 +91,30 @@ export default function UserProvider(props) {
     }
 
     function addTed(inputs){
-        setAllTeds(prevTeds => {
-            return [
-                ...prevTeds,
-                inputs
-            ]
+        userAxios.post("/api/main/ted", inputs)
+        .then(res => {
+            setAllTeds(prevTeds => {
+                return [
+                    ...prevTeds,
+                    res.data
+                ]
+            })
         })
+        .catch(err => console.err)
+    }
+
+    function deleteTed(id){
+        userAxios.delete(`/api/main/ted/${id}`)
+        .then(res => {
+            setAllTeds(prevTeds=> prevTeds.filter(ted => id !== ted._id))
+        })
+        .catch(err => console.err)
     }
 
 
+
     return (
-        <UserContext.Provider value = {{addTed,signup, login, ...userState, resetAuthErr, logout, allTeds}}>
+        <UserContext.Provider value = {{deleteTed, userAxios, addTed,signup, login, ...userState, resetAuthErr, logout, allTeds, setAllTeds}}>
             {props.children}
         </UserContext.Provider>
     )

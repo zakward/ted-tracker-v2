@@ -73,9 +73,9 @@ const navigate = useNavigate()
             </select>
             <label>Type</label>
             <select className="form-input" name="type" value={inputs.type} onChange={handleChange}>
-                <option value="Sativa">Sativa</option>
-                <option value="Indica">Indica</option>
-                <option value="Hybrid">Hybrid</option>
+                <option value="sativa">Sativa</option>
+                <option value="indica">Indica</option>
+                <option value="hybrid">Hybrid</option>
                 </select>
                 <label>Stars</label>
                 <select className="form-input" name="stars" value={inputs.stars} onChange={handleChange}>

@@ -50,5 +50,18 @@ tedRouter.get("/tedWithReviews", async (req, res, next) => {
     }
 })
 
+tedRouter.delete("/:tedId", async (req, res, next) => {
+    try {
+        const deletedTed = await ted.findOneAndDelete({
+            userId: req.auth._id,
+            _id: req.params.tedId
+        })
+        return res.status(200).send(`You successfully deleted ${deletedTed.name}`)
+    } catch (error) {
+        res.status(500)
+        return next(error)
+    }
+})
+
 
 module.exports = tedRouter
