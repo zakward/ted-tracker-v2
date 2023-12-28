@@ -7,8 +7,9 @@ function Review({_id, text, author}) {
     return ( 
         <>
             <div key={_id} className="comment">
+         
             <p><strong>{author.username}</strong>:</p>
-            <p>{text}</p>
+           <p>{text}</p>
           </div>
           <button onClick={() => setShowAddReview(true)}>Add Review</button>
 

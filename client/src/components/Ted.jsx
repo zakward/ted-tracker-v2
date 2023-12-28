@@ -19,7 +19,7 @@ function Ted({ name, _id, grower, category, dispensaryPurchased, thc, cbd, type,
 
 
     return (
-        <div id="ted-wrapper" onClick = {() => handleDetailClick(_id)}>
+        <div className="ted-wrapper single-div" onClick = {() => handleDetailClick(_id)}>
             <h2>{name}</h2>
         </div>
     );

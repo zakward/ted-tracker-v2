@@ -27,7 +27,7 @@ function TedDetail() {
 
     return ( 
     <>
-    <div id = "ted-wrapper">
+    <div className = "ted-wrapper">
             <h2>{foundTed.name}</h2>
             <h4>{foundTed.grower}</h4>
             <p>Harvest Date: {foundTed.date}</p>

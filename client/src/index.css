@@ -51,19 +51,32 @@ form {
   width: 100vw;
   align-items: center;
   gap: 50px;
+
 }
 
-#ted-wrapper{
+.ted-wrapper{
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 350px;
   border: 3px solid black;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   border-radius: 12px;
   padding: 5px;
   background-color: lightblue;
+  margin-top: 50px;
+}
+
+.single-div{
+  height: 100px;
+  justify-content: center;
+}
+
+.comment {
+  display: flex;
+  gap:10px;
+  margin-bottom: 20px;
 }
 
 /* #logout-btn{
