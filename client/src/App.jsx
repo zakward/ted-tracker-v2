@@ -5,12 +5,15 @@ import Form from './components/Form';
 import AuthForm from './components/AuthForm';
 import TedList from './components/TedList';
 import { UserContext } from './context/UserContext';
+import TedDetail from './components/TedDetail';
 
 
 function App() {
 
-  const {token} = useContext(UserContext)
+  const {token, allTeds} = useContext(UserContext)
 
+
+  console.log(allTeds)
   return (
     <>
       <Navbar />
@@ -19,6 +22,7 @@ function App() {
         <Route path ="/" element = {token ? <Navigate to = "/tedList"/> : <AuthForm />} />
         <Route path ="/form" element = {!token ? <Navigate to ="/" /> : <Form /> }/>
         <Route path = "/tedList" element = {!token ? <Navigate to ="/" /> : <TedList />} />
+        <Route path = "/tedList/:tedId" element = {!token ? <Navigate to ="/" /> : <TedDetail allTeds = {allTeds}/>} />
         </Routes>
       </div>
     </>
