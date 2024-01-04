@@ -4,7 +4,7 @@ import axios from "axios"
 import Ted from './Ted';
 
 function TedList() {
-    const { allTeds, setAllTeds, userAxios } = useContext(UserContext)
+    const { allTeds, setAllTeds, userAxios, allReviews } = useContext(UserContext)
     console.log(allTeds)
     const tedElements = allTeds.map(ted => {
         return (

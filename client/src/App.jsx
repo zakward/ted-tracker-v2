@@ -13,7 +13,7 @@ function App() {
   const {token, allTeds} = useContext(UserContext)
 
 
-  console.log(allTeds)
+
   return (
     <>
       <Navbar />

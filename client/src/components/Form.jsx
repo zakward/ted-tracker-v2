@@ -51,7 +51,6 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(inputs)
         addTed(inputs)
         alert("Every little thing.... its gonna be alright!")
         navigate("/tedList")

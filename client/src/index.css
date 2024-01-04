@@ -84,3 +84,14 @@ form {
   right: 0;
   margin-right: 20px;
 } */
+
+.add-review-dropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: #007bff;
+  border-radius: 12px;
+  padding: 20px;
+  height: 105%;
+  justify-content: space-between;
+  margin-top: 10px;
+}

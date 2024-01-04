@@ -41,7 +41,6 @@ export default function UserProvider(props) {
             token: token,
             user: user
         })
-        console.log('signup succesful')
     } catch (err) {
         handleAuthErr(err.response.data.errMsg)
         console.log(err)
@@ -119,12 +118,11 @@ export default function UserProvider(props) {
         .catch(err => console.log(err))
     }, [])
 
-    console.log(allReviews)
 
 
 
     return (
-        <UserContext.Provider value = {{allReviews, deleteTed, userAxios, addTed,signup, login, ...userState, resetAuthErr, logout, allTeds, setAllTeds}}>
+        <UserContext.Provider value = {{allReviews, deleteTed, userAxios, addTed,signup, login, ...userState, resetAuthErr, logout, allTeds, setAllTeds, setAllReviews}}>
             {props.children}
         </UserContext.Provider>
     )

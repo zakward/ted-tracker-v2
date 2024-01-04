@@ -15,7 +15,6 @@ function Ted({ name, _id, grower, category, dispensaryPurchased, thc, cbd, type,
         navigate(`/tedList/${tedId}`)
     }
 
-    const date = moment(harvestDate).format("MM-DD-YYYY")
 
 
     return (
