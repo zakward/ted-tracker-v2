@@ -10,6 +10,7 @@ function TedDetail() {
     const { deleteTed, allReviews, allTeds, userAxios, setAllTeds, setAllReviews } = useContext(UserContext)
     const { tedId } = useParams()
     const [showAddReview, setShowAddReview] = useState(false)
+    const [showReviews, setShowReviews] = useState(false)
 
 
 
@@ -86,7 +87,8 @@ function TedDetail() {
                 <p>Stars: {foundTed.stars} </p>
                 <h3>REVIEWS</h3>
                 {!showAddReview && <button onClick={() => setShowAddReview(true)}>Add Review</button>}
-                <div>{filteredElements}</div>
+                <button onClick = {()=> setShowReviews(!showReviews)}>{showReviews ? "Close Reviews" : "Show Reviews"}</button>
+                {showReviews && <div>{filteredElements}</div>}
                 {/* <button onClick = {deleteTedItem}>Delete TED</button> */}
                 {showAddReview && (
                     <div className="add-review-dropdown">
