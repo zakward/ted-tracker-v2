@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserContext";
 
 function AuthForm() {
 
-    const {signup, login, errMsg, resetAuthErr} = useContext(UserContext)
+    const { signup, login, errMsg, resetAuthErr } = useContext(UserContext)
 
     const [isUser, setIsUser] = useState(false)
 
@@ -27,7 +27,7 @@ function AuthForm() {
         })
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
         e.preventDefault()
         isUser ? login(input) : signup(input)
     }
@@ -36,8 +36,9 @@ function AuthForm() {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id='auth-form'>
                 <input
+                    className="auth-inputs"
                     name="username"
                     value={input.username}
                     onChange={handleChange}
@@ -45,6 +46,7 @@ function AuthForm() {
                     type="text"
                 />
                 <input
+                    className="auth-inputs"
                     name="password"
                     value={input.password}
                     onChange={handleChange}
