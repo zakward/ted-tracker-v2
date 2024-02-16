@@ -54,6 +54,10 @@ function TedDetail() {
           ]
         }))
         setShowAddReview(false)
+        setReviewInputs({
+          text: "",
+          rating: ""
+        })
         .catch(err => console.error(err))
 
     }
@@ -88,16 +92,16 @@ function TedDetail() {
                 <h3>REVIEWS</h3>
                 {!showAddReview && <button onClick={() => setShowAddReview(true)}>Add Review</button>}
                 <button onClick = {()=> setShowReviews(!showReviews)}>{showReviews ? "Close Reviews" : "Show Reviews"}</button>
-                {showReviews && <div className = "review-list">{filteredElements}</div>}
-                {/* <button onClick = {deleteTedItem}>Delete TED</button> */}
                 {showAddReview && (
                     <div className="add-review-dropdown">
-                        <input placeholder="Write your review..." name="text" value={reviewInputs.text} onChange={handleChange} />
+                        <textarea placeholder="Write your review..." type = "text-area" name="text" value={reviewInputs.text} onChange={handleChange}></textarea>
                         <input placeholder="Rate with Stars!" min="1" max="5" type="number" name="rating" value={reviewInputs.stars} onChange={handleChange} />
                         <button onClick={handleSubmit}>Submit Review</button>
                         <button onClick={() => setShowAddReview(false)}>Cancel</button>
                     </div>
                 )}
+                {showReviews && <div className = "review-list">{filteredElements}</div>}
+                {/* <button onClick = {deleteTedItem}>Delete TED</button> */}
             </div>
 
         </div>);
