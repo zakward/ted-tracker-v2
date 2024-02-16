@@ -7,11 +7,10 @@ function Navbar() {
     
     return ( 
         <nav>
-        <h3>Welcome {user.username}</h3>    
-        <h3>Ted-Tracker-V.2</h3>        
-        <Link to ="/form"><button>Add a New Ted</button>   </Link>     
-        <Link to ="/tedList"><button>Saved List</button></Link> 
-       {token && <button id = "logout-btn"onClick = {logout}>Log Out</button>}
+        <h3 className = "nav-item">Welcome {user.username}</h3>           
+        <Link to ="/form" className = "nav-item"><button>Add a New Ted</button>   </Link>     
+        <Link to ="/tedList" className = "nav-item"><button>Saved List</button></Link> 
+       {token && <button id = "logout-btn"onClick = {logout} className = "nav-item">Log Out</button>}
 
         </nav>
      );

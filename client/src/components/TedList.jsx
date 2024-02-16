@@ -22,9 +22,12 @@ function TedList() {
 
 
     return (
+        <>
+            <h1 id = "ted-title"style = {{color: "white", fontSize: "46px", borderBottom: "3px dashed white"}}>Ted Tracker</h1>
         <div style = {{display: "flex", flexDirection: "column", gap: "40px", marginTop: "50px"}}>
             {tedElements}
         </div>
+        </>
     );
 }
 
