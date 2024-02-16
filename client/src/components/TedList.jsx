@@ -22,7 +22,7 @@ function TedList() {
 
 
     return (
-        <div id = "ted-list-container">
+        <div style = {{display: "flex", flexDirection: "column", gap: "40px", marginTop: "50px"}}>
             {tedElements}
         </div>
     );

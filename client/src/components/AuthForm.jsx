@@ -54,9 +54,10 @@ function AuthForm() {
                     type="password"
                 />
                 <button>{isUser ? 'Log In' : 'Sign Up'}</button>
+                <button onClick={handleUserToggle}>{isUser ? 'Need to Sign Up?' : 'Need to Log In?'}</button>
                 <p>{errMsg}</p>
             </form>
-            <button onClick={handleUserToggle}>{isUser ? 'Need to Sign Up?' : 'Need to Log In?'}</button>
+            
         </>
     );
 }

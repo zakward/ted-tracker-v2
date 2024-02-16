@@ -74,7 +74,7 @@ function TedDetail() {
     })
 
     return (
-        <>
+        <div  id = "ted-list-container">
             <div className="ted-wrapper">
                 <h2>{foundTed?.name}</h2>
                 <h4>{foundTed.grower}</h4>
@@ -88,7 +88,7 @@ function TedDetail() {
                 <h3>REVIEWS</h3>
                 {!showAddReview && <button onClick={() => setShowAddReview(true)}>Add Review</button>}
                 <button onClick = {()=> setShowReviews(!showReviews)}>{showReviews ? "Close Reviews" : "Show Reviews"}</button>
-                {showReviews && <div>{filteredElements}</div>}
+                {showReviews && <div className = "review-list">{filteredElements}</div>}
                 {/* <button onClick = {deleteTedItem}>Delete TED</button> */}
                 {showAddReview && (
                     <div className="add-review-dropdown">
@@ -100,7 +100,7 @@ function TedDetail() {
                 )}
             </div>
 
-        </>);
+        </div>);
 }
 
 export default TedDetail
