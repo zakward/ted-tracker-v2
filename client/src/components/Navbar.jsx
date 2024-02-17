@@ -31,7 +31,7 @@ function Navbar() {
         <div className = {`${"menu"} ${isOpen && "active"}`}>
         <Link to ="/form" className = "nav-item" onClick={toggleMenu}><button>Add New Ted</button>   </Link>  
         <Link to ="/tedList" className = "nav-item" onClick={toggleMenu}><button>Saved List</button></Link> 
-       {token && <button id = "logout-btn"onClick = {closeLogout} className = "nav-item">Log Out</button>}
+       {token && <button id = "logout-btn"onClick = {closeLogout} className='nav-item' >Log Out</button>}
         </div>
         </>        
         }

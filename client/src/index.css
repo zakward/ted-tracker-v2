@@ -17,6 +17,12 @@ body {
 
 }
 
+.navigation{
+  position: absolute;
+  right: 0;
+  margin-right: 10%;
+}
+
 .menu{
   display: flex;
   flex-direction: column;
@@ -40,9 +46,6 @@ body {
 
 .nav-item{
  cursor: pointer;
- position: absolute;
- right: 0;
- margin-right: 10%;
 }
 
 .menu-icon{
