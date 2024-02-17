@@ -22,12 +22,15 @@ reviewRouter.post("/:tedId", async (req, res, next) => {
         const newReview = new Review(req.body)
         const savedReview = await newReview.save()
         const savedReviewWithUser = await savedReview.populate("author")
-        return res.status(201).send(savedReview)
+        return res.status(201).send(savedReviewWithUser)
     } catch (error) {
         res.status(500)
         return next(error)
     }
 })
+
+
+
 
 reviewRouter.get("/:tedId", async (req, res, next) => {
     try {
