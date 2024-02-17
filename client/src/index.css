@@ -40,6 +40,9 @@ body {
 
 .nav-item{
  cursor: pointer;
+ position: absolute;
+ right: 0;
+ margin-right: 10%;
 }
 
 .menu-icon{
@@ -95,7 +98,7 @@ nav {
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   border: 2px solid black;
   background-color: #333;
   color: white;
@@ -233,13 +236,6 @@ nav {
   cursor: pointer;
   margin-left: auto;
 }
-
-
-/* #logout-btn{
-  position: absolute;
-  right: 0;
-  margin-right: 20px;
-} */
 
 .add-review-dropdown {
   display: flex;
