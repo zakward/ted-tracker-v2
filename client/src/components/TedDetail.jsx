@@ -95,7 +95,36 @@ function TedDetail() {
                 {showAddReview && (
                     <div className="add-review-dropdown">
                         <textarea placeholder="Write your review..." type = "text-area" name="text" value={reviewInputs.text} onChange={handleChange}></textarea>
-                        <input placeholder="Rate with Stars!" min="1" max="5" type="number" name="rating" value={reviewInputs.stars} onChange={handleChange} />
+                        {/* <input placeholder="Rate with Stars!" min="1" max="5" type="number" name="rating" value={reviewInputs.stars} onChange={handleChange} /> */}
+            <select  name="stars" value={reviewInputs.stars} onChange={handleChange}>
+
+
+                <option
+
+                    value="1">⭐</option>
+
+
+                <option
+
+                    value="2">⭐⭐</option>
+
+
+                <option
+
+                    value="3">⭐⭐⭐</option>
+
+
+                <option
+
+                    value="4">⭐⭐⭐⭐</option>
+
+
+                <option
+
+                    value="5">⭐⭐⭐⭐⭐</option>
+
+
+            </select>        
                         <button onClick={handleSubmit}>Submit Review</button>
                         <button onClick={() => setShowAddReview(false)}>Cancel</button>
                     </div>
