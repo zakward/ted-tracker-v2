@@ -58,6 +58,7 @@ function Form() {
 
     return (
         <form id ="ted-form" onSubmit={handleSubmit}>
+            
             <label>Ted Name</label><input className="form-input" name="name" value={inputs.name} onChange={handleChange} />
             <label>Dispensary Purchased</label><input className="form-input" name="dispensaryPurchased" value={inputs.dispensaryPurchased} onChange={handleChange} />
             <label>Grower Company</label><input className="form-input" name="grower" value={inputs.grower} onChange={handleChange} />

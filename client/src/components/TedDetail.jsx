@@ -93,7 +93,7 @@ function TedDetail() {
   return (
     <div id="ted-list-container">
       <div className="ted-wrapper">
-        <h2>{foundTed?.name}</h2>
+        <h2 style = {{borderBottom: "2px dashed green"}}>{foundTed?.name}</h2>
         <h4>{foundTed.grower}</h4>
         <p>Harvest Date: {date}</p>
         <p>Purchased from: {foundTed.dispensaryPurchased}</p>
@@ -102,7 +102,7 @@ function TedDetail() {
         <p>Category: {foundTed.category}</p>
         <p>Type: {foundTed.type}</p>
         <Stack spacing={1}>
-          <Rating name="half-rating" value={foundTed.stars} precision={0.5} />
+          <Rating name="half-rating" value={foundTed.stars} precision={0.5} readOnly/>
           {/* <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly /> */}
         </Stack>
         {/* <p>Stars: {foundTed.stars} </p> */}
