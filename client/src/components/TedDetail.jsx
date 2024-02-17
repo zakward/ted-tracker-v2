@@ -3,6 +3,8 @@ import { UserContext } from '../context/UserContext';
 import { useParams } from 'react-router-dom';
 import Review from "./Review"
 import moment from "moment"
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 
 
 function TedDetail() {
@@ -47,29 +49,29 @@ function TedDetail() {
   const handleSubmit = (e) => {
     e.preventDefault()
     userAxios.post(`/api/main/reviews/${foundTed._id}`, reviewInputs)
-      .then(res =>{
-       setAllReviews(prevReviews => {
-        return [
-          ...prevReviews,
-          res.data
-        ]
+      .then(res => {
+        setAllReviews(prevReviews => {
+          return [
+            ...prevReviews,
+            res.data
+          ]
+        })
+
+        userAxios.put(`/api/main/ted/${foundTed._id}`, reviewInputs)
+          .then(res => {
+            //         console.log("this")
+            setAllTeds(prevAllTeds => {
+              return prevAllTeds.map(ted => ted._id === foundTed._id ? res.data : ted)
+            })
+            setShowAddReview(false)
+            setReviewInputs({
+              text: "",
+              rating: ""
+            })
+          })
+
+          .catch(err => console.error(err))
       })
-   
-      userAxios.put(`/api/main/ted/${foundTed._id}`, reviewInputs)
-        .then(res => {
-  //         console.log("this")
-          setAllTeds(prevAllTeds => {
-          return prevAllTeds.map(ted => ted._id === foundTed._id ? res.data : ted)
-    })
-    setShowAddReview(false)
-    setReviewInputs({
-      text: "",
-      rating: ""
-    })
-  })
-  
-        .catch(err => console.error(err))
-    })
       .catch(err => console.log(err))
   }
 
@@ -99,7 +101,11 @@ function TedDetail() {
         <p>CBD: {foundTed.cbd}%</p>
         <p>Category: {foundTed.category}</p>
         <p>Type: {foundTed.type}</p>
-        <p>Stars: {foundTed.stars} </p>
+        <Stack spacing={1}>
+          <Rating name="half-rating" value={foundTed.stars} precision={0.5} />
+          {/* <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly /> */}
+        </Stack>
+        {/* <p>Stars: {foundTed.stars} </p> */}
         {/* <span>&#9733;</span>
         <span>&#9733;&#189;</span> */}
         <h3>REVIEWS</h3>

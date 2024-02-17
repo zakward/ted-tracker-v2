@@ -14,7 +14,7 @@ function Form() {
         cbd: 0,
         category: "",
         type: "",
-        stars: 0
+        stars: 1
     })
     console.log(inputs)
     const isValidDateString = (dateString) => {
