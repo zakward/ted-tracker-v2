@@ -17,14 +17,15 @@ body {
 
 }
 
-.nav-items{
-  width: 100%;
+.nav-item{
+ cursor: pointer;
 }
 
 #ted-title{
   text-shadow:
     -4px -4px 0 #4CAF50, /* Red inner shadow */
     0 0 10px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+    padding-top: 50px;;
 }
 
 .auth-inputs {
@@ -33,6 +34,11 @@ body {
   border: 1px solid #ccc;
   border-radius: 3px;
   width: 100%;
+}
+
+#required{
+ align-self: flex-end;
+ margin-right: 1%;
 }
 
 .form-input {
@@ -258,3 +264,6 @@ nav {
 }
 
 
+#delete-review{
+  cursor: pointer;
+}

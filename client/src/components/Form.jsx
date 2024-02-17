@@ -58,11 +58,12 @@ function Form() {
 
     return (
         <form id ="ted-form" onSubmit={handleSubmit}>
+            <p id = "required">* required</p>
             
-            <label>Ted Name</label><input className="form-input" name="name" value={inputs.name} onChange={handleChange} />
+            <label>* Ted Name</label><input required className="form-input" name="name" value={inputs.name} onChange={handleChange} />
             <label>Dispensary Purchased</label><input className="form-input" name="dispensaryPurchased" value={inputs.dispensaryPurchased} onChange={handleChange} />
             <label>Grower Company</label><input className="form-input" name="grower" value={inputs.grower} onChange={handleChange} />
-            <label>THC %</label><input className="form-input" name="thc" value={inputs.thc} onChange={handleChange} type="number" />
+            <label>* THC %</label><input required className="form-input" name="thc" value={inputs.thc} onChange={handleChange} type="number" />
             <label>CBD %</label><input className="form-input" name="cbd" value={inputs.cbd} onChange={handleChange} type="number" />
             <label>Harvest Date</label><input className="form-input" name="harvestDate" onChange={handleDateChange} type="date" />
             <label>Category</label>
