@@ -73,7 +73,8 @@ tedRouter.put("/:tedId", async (req, res, next) => {
         foundTed.stars = newAverage
         const savedTed = await foundTed.save()
         const reviews = await review.find({ tedId: savedTed._id })
-        const tedWithReviews = { ...savedTed.toObject(), reviews }
+        const user = await User.findOne({ _id: savedTed.userId })
+        const tedWithReviews = { ...savedTed.toObject(), reviews, users: user.withoutPassword() }
         res.status(201).send(tedWithReviews)
     } catch (error) {
         res.status(500)
