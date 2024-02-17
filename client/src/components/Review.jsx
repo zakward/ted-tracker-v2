@@ -1,8 +1,10 @@
 import React, {useState, useContext} from 'react';
 import {UserContext} from "../context/UserContext";
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-function Review({_id, text, author, setAllReviews}) {
+function Review({_id, text, author, rating, setAllReviews}) {
 
     const {userAxios, user} = useContext(UserContext)
 
@@ -21,6 +23,10 @@ function Review({_id, text, author, setAllReviews}) {
             <div key={_id} className="comment">
          
             <p><strong>{author.username}</strong>:</p>
+            <Stack spacing={1}>
+          <Rating name="half-rating" value={rating} precision={0.5} readOnly/>
+          {/* <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly /> */}
+        </Stack>
            <p>{text}</p>
            {author._id === user._id && <DeleteForeverIcon fontSize = "small" onClick = {handleDeleteReview} id ="delete-review"/>}
           </div>

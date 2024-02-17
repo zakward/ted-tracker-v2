@@ -7,6 +7,7 @@ import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 
 
+
 function TedDetail() {
 
   const { deleteTed, allReviews, allTeds, userAxios, setAllTeds, setAllReviews } = useContext(UserContext)
