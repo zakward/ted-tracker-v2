@@ -70,6 +70,11 @@ body {
     padding-top: 50px;;
 }
 
+#search-input{
+  font-size: 26px;
+  margin: 20px;
+}
+
 .auth-inputs {
   margin-bottom: 10px;
   padding: 10px;
