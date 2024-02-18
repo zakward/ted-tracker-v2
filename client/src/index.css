@@ -28,8 +28,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: 50vh;
-  min-width: 60vw;
+  min-height: 80vh;
+  min-width: 80vw;
   position: absolute;
   top:-100vh;
   left: 50%;
@@ -40,12 +40,20 @@ body {
   transform: translateX(-50%);
   transition: top 0.5s ease; 
 }
+
+
 .menu.active {
   top: 15vh; /* Move the menu to its final position */
 }
 
 .nav-item{
  cursor: pointer;
+}
+
+.nav-btn{
+  height: 75px;
+  width: 40vw;
+  font-size: larger;
 }
 
 .menu-icon{
@@ -208,8 +216,8 @@ nav {
   align-items: flex-start;
   /* Align text content */
   padding: 10px;
-  border-bottom: 1px solid #eee;
-  font-size: 16px;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
   /* Light border between comments */
 }
 
@@ -296,6 +304,34 @@ nav {
 #delete-review{
   cursor: pointer;
 }
+
+.under-construction {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.content > ul {
+  list-style-type: none;
+}
+
+.subtitle {
+  font-size: 24px;
+}
+
+.content {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
 
 
 

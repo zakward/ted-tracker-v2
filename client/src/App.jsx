@@ -6,6 +6,7 @@ import AuthForm from './components/AuthForm';
 import TedList from './components/TedList';
 import { UserContext } from './context/UserContext';
 import TedDetail from './components/TedDetail';
+import Resources from './components/Resources';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path ="/form" element = {!token ? <Navigate to ="/" /> : <Form /> }/>
         <Route path = "/tedList" element = {!token ? <Navigate to ="/" /> : <TedList />} />
         <Route path = "/tedList/:tedId" element = {!token ? <Navigate to ="/" /> : <TedDetail allTeds = {allTeds}/>} />
+        <Route path = "/resources" element = {!token ? <Navigate to ="/" /> : <Resources />} /> 
         </Routes>
       </div>
     </>
