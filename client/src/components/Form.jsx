@@ -10,8 +10,8 @@ function Form() {
         name: "",
         dispensaryPurchased: "",
         grower: "",
-        thc: 0,
-        cbd: 0,
+        thc: "",
+        cbd: "",
         category: "",
         type: "",
         stars: 1
@@ -61,7 +61,12 @@ function Form() {
             <p id = "required">* required</p>
             
             <label>* Ted Name</label><input required className="form-input" name="name" value={inputs.name} onChange={handleChange} />
-            <label>Dispensary Purchased</label><input className="form-input" name="dispensaryPurchased" value={inputs.dispensaryPurchased} onChange={handleChange} />
+            <label>Dispensary Purchased</label>
+            <select className="form-input" name="dispensaryPurchased" value={inputs.dispensaryPurchased} onChange={handleChange}>
+                <option value = "">---</option>
+                <option value = "Harvest">Harvest</option>
+                <option value = "Natural Relief">Natural Relief</option>
+            </select>
             <label>Grower Company</label><input className="form-input" name="grower" value={inputs.grower} onChange={handleChange} />
             <label>* THC %</label><input required className="form-input" name="thc" value={inputs.thc} onChange={handleChange} type="number" />
             <label>CBD %</label><input className="form-input" name="cbd" value={inputs.cbd} onChange={handleChange} type="number" />
@@ -109,7 +114,7 @@ function Form() {
                     value="5">⭐⭐⭐⭐⭐</option>
 
 
-            </select>                <button>Add Ted</button>
+            </select>                <button id = "add-btn">Add Ted</button>
 
         </form>
     );

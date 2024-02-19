@@ -26,7 +26,7 @@ function Navbar() {
            {isOpen ?  <CloseIcon fontSize='large'className = "menu-icon" onClick = {toggleMenu}/> :
             <MenuIcon fontSize='large' className = "menu-icon" onClick = {toggleMenu}/>
     }
-        <h3>Welcome {user.username}</h3> 
+        <h3 id = "welcome-msg">Welcome {user.username}</h3> 
         {token && <ArrowBackIosNewIcon className="nav-item navigation" fontSize= "large" onClick = {()=> navigate(-1)}/>}
 
         {isOpen &&  
