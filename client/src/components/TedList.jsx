@@ -56,7 +56,7 @@ function TedList() {
             <input id="search-input" type="text" value={searchQuery} onChange={handleSearchChange} placeholder="Search" />
             <span style={{ color: "white", fontSize: "larger" }}>
                 Filter By Type
-                <select value={selectedType} onChange={handleTypeChange} style={{ marginLeft: "20px" }}>
+                <select value={selectedType} onChange={handleTypeChange} style={{ fontSize: "large", marginLeft: "20px" }}>
 
                     <option value="All">All Types</option>
                     <option value="indica">Indica</option>
