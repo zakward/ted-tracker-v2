@@ -95,7 +95,7 @@ function TedDetail() {
 
   return (
     <div id="ted-list-container">
-      <div className="ted-wrapper">
+      <div className={`ted-wrapper ${foundTed.type}-class`} >
         <h2 style = {{borderBottom: "2px dashed green"}}>{foundTed?.name}</h2>
         <p>Added by: {foundTed.users.username}</p>
         <h4>{foundTed.grower}</h4>
