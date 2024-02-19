@@ -15,10 +15,8 @@ function Ted({ name, _id, grower, category, dispensaryPurchased, thc, cbd, type,
         navigate(`/tedList/${tedId}`)
     }
 
-
-
     return (
-        <div className="ted-wrapper single-div" onClick = {() => handleDetailClick(_id)}>
+        <div className =  {`ted-wrapper single-div ${type === "indica" ? "indica-class" : type === "sativa" ? "sativa-class" : "hybrid-class" }`}onClick = {() => handleDetailClick(_id)}>
             <h2>{name}</h2>
         </div>
     );

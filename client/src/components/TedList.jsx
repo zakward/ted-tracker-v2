@@ -54,9 +54,9 @@ function TedList() {
         <>
             <h1 id="ted-title" style={{ color: "white", fontSize: "46px", borderBottom: "3px solid #4CAF50" }}>Ted Tracker</h1>
             <input id="search-input" type="text" value={searchQuery} onChange={handleSearchChange} placeholder="Search" />
-            <span style={{ color: "white", fontSize: "larger"}}>
+            <span style={{ color: "white", fontSize: "larger" }}>
                 Filter By Type
-                <select value={selectedType} onChange={handleTypeChange} style = {{marginLeft: "20px"}}>
+                <select value={selectedType} onChange={handleTypeChange} style={{ marginLeft: "20px" }}>
 
                     <option value="All">All Types</option>
                     <option value="indica">Indica</option>
@@ -71,6 +71,11 @@ function TedList() {
                     <input type="checkbox" style={{ opacity: 0, width: "100%", height: "100%", cursor: "pointer", position: "absolute", top: 0, left: 0, zIndex: 2 }} checked={sortByTHC} onChange={handleSortChange} />
                     <span style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "12px", height: "12px", backgroundColor: "white", borderRadius: "50%", border: "2px solid #fff", opacity: sortByTHC ? 1 : 0 }}></span>
                 </label>
+            </div>
+            <div className="legend-container">
+                <div className="legend-item indica-class">Indica</div>
+                <div className="legend-item sativa-class">Sativa</div>
+                <div className="legend-item hybrid-class">Hybrid</div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "40px", marginTop: "50px" }}>
                 {tedElements}

@@ -182,17 +182,14 @@ nav {
   gap: 20px;
   border-radius: 12px;
   padding: 15px;
-  border: 1px solid #ccc;
   padding: 20px;
   margin: 0 auto;
-  background-color: #f0f8ff;
   font-size: 22px;
+ 
 }
 
-.ted-wrapper h2,
-.ted-wrapper h4 {
+.ted-wrapper h2 {
   margin-bottom: 10px;
-  color: #4CAF50;
   /* Blue from button */
 }
 
@@ -206,6 +203,42 @@ nav {
   justify-content: center;
 }
 
+.indica-class{
+  background-color:  #4CAF50;
+  color: white;
+  border: 2px solid white;
+}
+
+.sativa-class {
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #4CAF50;
+}
+
+.hybrid-class {
+  color: white;
+  background: linear-gradient(to bottom right, #4CAF50, #007bff, #4CAF50);
+  border: 2px solid white;
+}
+
+.legend-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  border-bottom: 1px dashed white;
+  border-top: 1px dashed white;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.legend-item {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
+  margin-right: 10px;
+}
 .ted-wrapper button {
   background-color: #4CAF50;
   /* Blue from button */
