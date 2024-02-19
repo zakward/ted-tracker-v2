@@ -36,10 +36,12 @@ function TedDetail() {
 
   useEffect(() => {
     userAxios.get("/api/main/ted/tedWithReviews")
-      .then(res => setAllTeds(res.data))
-      .catch(err => console.log(err))
-  }, [tedId]);
-
+      .then(res => {
+        const sortedTeds = res.data.sort((a, b) => a.name.localeCompare(b.name)); // Sort alphabetically by name
+        setAllTeds(sortedTeds);
+      })
+      .catch(err => console.log(err));
+  }, [userAxios, setAllTeds]);
 
 
   const foundTed = allTeds.find((ted) => ted._id === tedId)
