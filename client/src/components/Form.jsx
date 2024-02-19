@@ -57,15 +57,15 @@ function Form() {
     }
 
     return (
-        <form id ="ted-form" onSubmit={handleSubmit}>
-            <p id = "required">* required</p>
-            
+        <form id="ted-form" onSubmit={handleSubmit}>
+            <p id="required">* required</p>
+
             <label>* Ted Name</label><input required className="form-input" name="name" value={inputs.name} onChange={handleChange} />
             <label>Dispensary Purchased</label>
             <select className="form-input" name="dispensaryPurchased" value={inputs.dispensaryPurchased} onChange={handleChange}>
-                <option value = "">---</option>
-                <option value = "Harvest">Harvest</option>
-                <option value = "Natural Relief">Natural Relief</option>
+                <option value="">---</option>
+                <option value="Harvest">Harvest</option>
+                <option value="Natural Relief">Natural Relief</option>
             </select>
             <label>Grower Company</label><input className="form-input" name="grower" value={inputs.grower} onChange={handleChange} />
             <label>* THC %</label><input required className="form-input" name="thc" value={inputs.thc} onChange={handleChange} type="number" />
@@ -85,36 +85,7 @@ function Form() {
                 <option value="indica">Indica</option>
                 <option value="hybrid">Hybrid</option>
             </select>
-            <label>Stars</label>
-            <select className="form-input" name="stars" value={inputs.stars} onChange={handleChange}>
-
-
-                <option
-
-                    value="1">⭐</option>
-
-
-                <option
-
-                    value="2">⭐⭐</option>
-
-
-                <option
-
-                    value="3">⭐⭐⭐</option>
-
-
-                <option
-
-                    value="4">⭐⭐⭐⭐</option>
-
-
-                <option
-
-                    value="5">⭐⭐⭐⭐⭐</option>
-
-
-            </select>                <button id = "add-btn">Add Ted</button>
+            <button id="add-btn">Add Ted</button>
 
         </form>
     );
