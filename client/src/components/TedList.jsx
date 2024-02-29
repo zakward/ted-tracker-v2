@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../context/UserContext';
-import axios from "axios"
 import Ted from './Ted';
 
 function TedList() {
@@ -9,6 +8,14 @@ function TedList() {
     const [selectedType, setSelectedType] = useState('All'); // New state for type filtering
     const [sortByTHC, setSortByTHC] = useState(false); // State for sorting by THC content
     const [filteredTeds, setFilteredTeds] = useState([]);
+
+    if (!allTeds){
+        return (
+            <>
+                <h2>Hang tight.....</h2>
+            </>
+        )
+    }
 
     useEffect(() => {
         userAxios.get("/api/main/ted/tedWithReviews")
